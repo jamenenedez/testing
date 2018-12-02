@@ -45,10 +45,7 @@ export class FormComponent implements OnInit {
   }
 
   edit(audio: Audio) {
-    this.audioService.selected = audio;
-  }
-
-  getOne(audio: Audio) {
+    console.log(audio);
     this.audioService.selected = audio;
   }
 

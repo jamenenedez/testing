@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb+srv://jamenendez:Estudios-*2018@cluster0-7mf0l.mongodb.net/movie_catalog';
+const URI = 'mongodb+srv://jamenendez:Estudios-*2018@cluster0-7mf0l.mongodb.net/audio_clip';
 
 mongoose.connect(URI, { useNewUrlParser: true })
 .then(db => console.log('DB conection successfuly'))

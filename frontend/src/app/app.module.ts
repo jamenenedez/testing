@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { DetailsComponent } from './components/details/details.component';
 import { AudioComponent } from './components/audio/audio.component';
+import { TableComponent } from './components/table/table.component';
+import { AudioService } from './services/audio.service';
+import { MaterialModule } from './material/material.module';
 
 const routes: Routes = [
   {
@@ -19,6 +22,10 @@ const routes: Routes = [
   {
     path: 'form',
     component: FormComponent
+  }, 
+  {
+    path: 'table',
+    component: TableComponent
   },  
   {
     path: 'details/:id',
@@ -32,16 +39,18 @@ const routes: Routes = [
     DetailsComponent,
     AudioComponent,
     FormComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     MyOwnCustomMaterialModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MaterialModule
   ],
-  providers: [],
+  providers: [AudioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

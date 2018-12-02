@@ -4,8 +4,8 @@ export class Audio {
         bitrate = 0,
         contentSize = 0,
         contentURI = "",
-        location_x = 0,
-        location_y = 0,
+        latitude = 0,
+        longitude = 0,
         encodingFormat = '',
         uploadDate = '',
         duration = 0,
@@ -14,8 +14,8 @@ export class Audio {
         this.bitrate = bitrate;
         this.contentSize = contentSize;
         this.contentURI = contentURI;
-        this.location_x = location_x;
-        this.location_y = location_y;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.encodingFormat = encodingFormat;
         this.uploadDate = uploadDate;
         this.duration = duration;
@@ -26,8 +26,8 @@ export class Audio {
     bitrate: number;
     contentSize: number;
     contentURI: string;
-    location_x: number;
-    location_y: number;
+    latitude: number;
+    longitude: number;
     encodingFormat: string;
     uploadDate: string;
     duration: number;

@@ -47,15 +47,17 @@ router.get('/:id', audioClipCtrl.getaudioClipById);
 
 // Insertar audio
 /* router.post('/', upload.single('audio'), audioClipCtrl.createaudioClip); */
-router.post('/', function (req, res, next) {
-    upload(req, res, function (err) {
-        if (err) {
-            return res.status(501).json({ error: err });
-        }
-        //do all database record saving activity
-        return res.json({ originalname: req.file.originalname, uploadname: req.file.filename });
-    });
-}, audioClipCtrl.createaudioClip);
+// router.post('/', function (req, res, next) {
+//     upload(req, res, function (err) {
+//         if (err) {
+//             res.status(501).json({ error: err });
+//         }
+//         //do all database record saving activity
+//         res.json({ originalname: req.file.originalname, uploadname: req.file.filename });
+//     });
+// }, audioClipCtrl.createaudioClip);
+
+router.post('/', upload, audioClipCtrl.createaudioClip);
 
 router.post('/download', function (req, res, next) {
     filepath = path.join(__dirname, '../../uploads/media') + '/' + req.body.filename;

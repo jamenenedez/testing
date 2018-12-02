@@ -16,14 +16,6 @@ export class AudioComponent implements OnInit {
   public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3000/api/audioClips', itemAlias: 'audio' });
   attachments: any = [];
 
-  private record;
-  //Will use this flag for detect recording
-  private recording = false;
-  //Url of Blob
-  private url;
-  private error;
-  constructor(private domSanitizer: DomSanitizer, private audioService: AudioService) { }
-
   ngOnInit() {
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
@@ -34,6 +26,15 @@ export class AudioComponent implements OnInit {
     };
   }
 
+  private record;
+  //Will use this flag for detect recording
+  private recording = false;
+  //Url of Blob
+  private url;
+  private error;
+  constructor(private domSanitizer: DomSanitizer, private audioService: AudioService) { }
+
+  
   download(index) {
     var filename = this.attachments[index].uploadname;
 

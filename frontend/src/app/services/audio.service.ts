@@ -15,7 +15,7 @@ export class AudioService {
 
   constructor(private http: HttpClient) {
     this.selected = new Audio();
-  }
+  } 
 
   getAll() {
     return this.http.get(this.URL_API);

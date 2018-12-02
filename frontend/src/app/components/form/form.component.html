@@ -2,7 +2,7 @@
   <div class="col s5">
     <div class="card">
       <div class="card-content">
-        <label style="font-family: 'Courier New', Courier, monospace; font-size: 2em" for="audioForm">Manage Actor</label>
+        <label style="font-family: 'Courier New', Courier, monospace; font-size: 2em" for="audioForm">Manage Audio</label>
         <form #audioForm="ngForm" (ngSubmit)=update(audioForm) class="css-form">
           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="audioService.selected._id">
           <div class="row">
@@ -11,17 +11,17 @@
                 placeholder="Enter audio's label" required>
             </div>
             <div class="input-field col s12">
-              <input type="text" name="location_x" #location_x="ngModel" [(ngModel)]="audioService.selected.location_x"
+              <input type="number" name="latitude" #latitude="ngModel" [(ngModel)]="audioService.selected.latitude"
                 placeholder="Enter audio's latitude" required>
             </div>
             <div class="input-field col s12">
-              <input type="text" name="location_y" #location_y="ngModel" [(ngModel)]="audioService.selected.location_y"
+              <input type="number" name="longitude" #longitude="ngModel" [(ngModel)]="audioService.selected.longitude"
                 placeholder="Enter audio's longitude" required>
             </div>
             <div class="card-action">
               <div class="input-field col s12">
                 <button type="reset" class="btn right" style="margin-left:5px">Clean</button>
-                <button type="submit" class="btn right" [disabled]="!audioForm._id">Save</button>
+                <button type="submit" class="btn right" [disabled]="!audioService.selected._id">Save</button>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
       <tbody>
         <tr *ngFor="let audio of audioService.audios">
           <td>{{audio.label}}</td>
-          <td>latitude: {{audio.location_x}}, longitude: {{audio.location_y}}</td>
+          <td>latitude: {{audio.latitude}}, longitude: {{audio.longitude}}</td>
           <td>{{audio.contentSize}}</td>
           <td>{{audio.contentURI}}</td>
           <td>{{audio.encodingFormat}}</td>
