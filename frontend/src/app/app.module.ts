@@ -15,6 +15,7 @@ import { GenderComponent } from './components/gender/gender.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { UserComponent } from './components/user/user.component';
 import { DetailsComponent } from './components/details/details.component';
+import { AudioComponent } from './components/audio/audio.component';
 
 const routes: Routes = [
   {
@@ -62,7 +63,8 @@ const routes: Routes = [
     GenderComponent,
     MovieComponent,
     UserComponent,
-    DetailsComponent
+    DetailsComponent,
+    AudioComponent
   ],
   imports: [
     BrowserModule,
