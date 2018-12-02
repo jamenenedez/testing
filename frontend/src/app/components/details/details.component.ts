@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActorService } from 'src/app/services/actor.service';
+import { AudioService } from 'src/app/services/audio.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -10,16 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class DetailsComponent implements OnInit {
 
-  actor$: Object;
+  audio$: Object;
 
-  constructor(private data: ActorService, private route: ActivatedRoute) {
-    this.route.params.subscribe(params => { this.actor$ = params.id });
+  constructor(private data: AudioService, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => { this.audio$ = params.id });
   }
 
   ngOnInit() {
-    this.data.getOne(this.actor$).subscribe(
+    this.data.getOne(this.audio$).subscribe(
       data => {
-        this.actor$ = data
+        this.audio$ = data
       }
     )
   }
